@@ -17,6 +17,8 @@ public class Main3Activity extends AppCompatActivity {
     TextView tv_autor;
     TextView tv_ano;
     TextView tv_nota;
+    final static int RESULT_ONE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +40,10 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(cont < 1){
-                    btn_retornar.setEnabled(false);
+                    btn_retornar.setVisibility(View.INVISIBLE);
                 }else{
-                    btn_avancar.setEnabled(true);
-                    btn_retornar.setEnabled(true);
+                    btn_avancar.setVisibility(View.VISIBLE);
+                    btn_retornar.setVisibility(View.VISIBLE);
                     cont --;
                     exibir(cont);
                 }
@@ -51,10 +53,10 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(cont > listaLivros.size()-2){
-                    btn_avancar.setEnabled(false);
+                    btn_avancar.setVisibility(View.INVISIBLE);
                 }else {
-                    btn_retornar.setEnabled(true);
-                    btn_avancar.setEnabled(true);
+                    btn_retornar.setVisibility(View.VISIBLE);
+                    btn_avancar.setVisibility(View.VISIBLE);
                     cont ++;
                     exibir(cont);
                 }
@@ -64,7 +66,7 @@ public class Main3Activity extends AppCompatActivity {
         });
         if(listaLivros.size() == 0) {
             Intent intent = new Intent();
-            setResult(RESULT_CANCELED,intent);
+            setResult(RESULT_ONE,intent);
             finish();
         }else{
             exibir(cont);

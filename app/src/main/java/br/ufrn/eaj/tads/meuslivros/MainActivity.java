@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import static br.ufrn.eaj.tads.meuslivros.Main2Activity.RESULT_TWO;
+import static br.ufrn.eaj.tads.meuslivros.Main3Activity.RESULT_ONE;
+
 public class MainActivity extends AppCompatActivity {
         final static int request_one = 1;
         final static int request_two = 2;
@@ -40,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void callSnack(String message){
         Snackbar snack = Snackbar.make(constraint, message, Snackbar.LENGTH_LONG)
-                .setAction("cancelar", new View.OnClickListener(){
+                .setAction("", new View.OnClickListener(){
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Vc clicou", Toast.LENGTH_SHORT).show();
+
                     }
                 });
         snack.show();
@@ -56,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 1){
             if(resultCode == RESULT_OK){
               callSnack("CADASTRO REALIZADO COM SUCESSO!!");
-            }else if(requestCode == RESULT_CANCELED){
-
+            }else if(resultCode == RESULT_CANCELED){
+              callSnack("OPERAÇÃO CANCELADA!!");
             }
 
         }else if(requestCode == 2){
-            if(resultCode == RESULT_CANCELED){
+            if(resultCode == RESULT_ONE){
                 callSnack("NENHUM LIVRO CADASTRADO!!");
             }
         }

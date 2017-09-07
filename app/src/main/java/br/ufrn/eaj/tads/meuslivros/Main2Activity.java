@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
         final static int result_code = 1;
+        final static int RESULT_TWO = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,16 @@ public class Main2Activity extends AppCompatActivity {
 
             }
         });
+        Button bnt_cancelar = (Button) findViewById(R.id.button4);
+        bnt_cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                setResult(RESULT_CANCELED,intent);
+                finish();
+            }
+        });
+
 
 
 

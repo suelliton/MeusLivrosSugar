@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="br.ufrn.eaj.tads.meuslivros.Main2Activity">
 
     <TextView
@@ -107,6 +108,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <Button
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,6 +122,8 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
