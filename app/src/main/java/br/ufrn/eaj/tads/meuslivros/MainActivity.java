@@ -15,6 +15,7 @@ import static br.ufrn.eaj.tads.meuslivros.Main3Activity.RESULT_ONE;
 public class MainActivity extends AppCompatActivity {
         final static int request_one = 1;
         final static int request_two = 2;
+        final static  int request_tree = 3;
     ConstraintLayout constraint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +31,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btn_listar = (Button) findViewById(R.id.button2);
-        btn_listar.setOnClickListener(new View.OnClickListener() {
+        Button btn_buscar = (Button) findViewById(R.id.button2);
+        btn_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,Main3Activity.class);
                 startActivityForResult(intent,request_two);
             }
         });
-
+        Button btn_listar = (Button) findViewById(R.id.btn_listar);
+        btn_listar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ListarActivity.class);
+                startActivityForResult(intent,request_tree);
+            }
+        });
 
     }
     public void callSnack(String message){
