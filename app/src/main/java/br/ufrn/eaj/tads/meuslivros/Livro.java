@@ -1,10 +1,12 @@
 package br.ufrn.eaj.tads.meuslivros;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by Aluno on 06/09/2017.
  */
 
-public class Livro {
+public class Livro  extends SugarRecord{
     private long id;
     private String titulo;
     private String autor;
@@ -19,10 +21,9 @@ public class Livro {
         this.autor = autor;
         this.ano = ano;
         this.nota = nota;
-        this.id = 0;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

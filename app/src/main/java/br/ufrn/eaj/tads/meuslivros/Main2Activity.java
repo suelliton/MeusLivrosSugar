@@ -10,6 +10,8 @@ import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.orm.SugarContext;
+
 public class Main2Activity extends AppCompatActivity {
         final static int result_code = 1;
         final static int RESULT_TWO = 2;
@@ -17,6 +19,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        SugarContext.init(this);
 
         final EditText tv_titulo = (EditText) findViewById(R.id.editText);
         final EditText tv_autor = (EditText) findViewById(R.id.editText2);
@@ -33,9 +36,8 @@ public class Main2Activity extends AppCompatActivity {
                 double nota = rt_nota.getRating() ;
 
                 Livro livro = new Livro(titulo,autor,ano,nota);
-                BancoHelper bh = new BancoHelper(Main2Activity.this);
-                bh.save(livro);
 
+                livro.save(livro);
 
                 Intent intent = new Intent();
                 setResult(RESULT_OK,intent);
@@ -59,5 +61,11 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SugarContext.terminate();
     }
 }

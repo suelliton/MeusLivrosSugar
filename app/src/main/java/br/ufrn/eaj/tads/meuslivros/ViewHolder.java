@@ -16,10 +16,14 @@ public class ViewHolder{
     final RatingBar rating ;
 
 
+
     public ViewHolder(View v){
-        titulo = (TextView) v.findViewById(R.id.text_titulo);
-        autor = (TextView) v.findViewById(R.id.text_autor);
-        ano = (TextView) v.findViewById(R.id.text_ano);
-        rating = (RatingBar) v.findViewById(R.id.rating_nota);
+        titulo =   v.findViewById(R.id.text_titulo);
+        autor =  v.findViewById(R.id.text_autor);
+        ano =  v.findViewById(R.id.text_ano);
+        rating =  v.findViewById(R.id.rating_nota);
+
     }
+
+
 }

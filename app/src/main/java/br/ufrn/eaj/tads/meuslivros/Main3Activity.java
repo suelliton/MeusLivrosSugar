@@ -29,9 +29,9 @@ public class Main3Activity extends AppCompatActivity {
         tv_ano = (TextView) findViewById(R.id.tv3);
         tv_nota = (TextView) findViewById(R.id.tv4);
 
-        BancoHelper bh = new BancoHelper(this);
 
-        listaLivros = (ArrayList<Livro>) bh.findAll();
+
+        listaLivros = (ArrayList<Livro>) Livro.findAll(Livro.class);
 
         final Button btn_retornar = (Button) findViewById(R.id.button5);
         final Button btn_avancar = (Button) findViewById(R.id.button6);
