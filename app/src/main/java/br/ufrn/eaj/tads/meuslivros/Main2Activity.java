@@ -35,6 +35,7 @@ public class Main2Activity extends AppCompatActivity {
         tv_autor = (EditText) findViewById(R.id.editText2);
         tv_ano = (EditText) findViewById(R.id.editText3);
         rt_nota = (RatingBar) findViewById(R.id.ratingBar);
+
         if(bundle != null){
             tv_titulo = (EditText) findViewById(R.id.editText);
             tv_autor = (EditText) findViewById(R.id.editText2);
@@ -44,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
             tv_titulo.setText(bundle.getString("titulo"));
             tv_ano.setText(String.valueOf(bundle.getInt("ano")));
             tv_autor.setText(bundle.getString("autor"));
-           // rt_nota.setNumStars((int) bundle.getDouble("nota"));
+            rt_nota.setRating((int) bundle.getDouble("nota"));
             id_update = bundle.getLong("id");
         }
 

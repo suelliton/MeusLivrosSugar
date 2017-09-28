@@ -97,18 +97,18 @@ public class ListarActivity extends AppCompatActivity {
                 new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void clickinho(View view, int position) {
-//                        Bundle bundle = new Bundle();
-//                        bundle.putString("titulo",livros.get(position).getTitulo());
-//                        bundle.putString("autor",livros.get(position).getAutor());
-//                        bundle.putInt("ano",livros.get(position).getAno());
-//                        bundle.putDouble("nota",livros.get(position).getNota());
-//                        bundle.putLong("id",livros.get(position).getId());
-//                        position_update = position;
-//                        Intent intent = new Intent(ListarActivity.this,Main2Activity.class);
-//                        intent.putExtras(bundle);
-//                        startActivityForResult(intent,REQUEST_UPDATE);
-//                        finish();
-                        //startActivityForResult(intent,REQUEST_UPDATE);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("titulo",livros.get(position).getTitulo());
+                        bundle.putString("autor",livros.get(position).getAutor());
+                        bundle.putInt("ano",livros.get(position).getAno());
+                        bundle.putDouble("nota",livros.get(position).getNota());
+                        bundle.putLong("id",livros.get(position).getId());
+                        position_update = position;
+                        Intent intent = new Intent(ListarActivity.this,Main2Activity.class);
+                        intent.putExtras(bundle);
+                        startActivityForResult(intent,REQUEST_UPDATE);
+
+
                     }
 
                     @Override
